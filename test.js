@@ -20,8 +20,8 @@ if(app.server){
       myColor = new color().toHex().value;
       myUsername = app.user;
       // addMessage('Server listening on ' + ip + ':' + app.port, 'server', serverColor);
-      server = require('http').createServer().listen(app.port, '71.56.216.152');
-      io = require('socket.io').listen(server);//.set('log level', 0);
+      // server = require('http').createServer().listen(app.port, '71.56.216.152');
+      io = require('socket.io').listen(app.port);//.set('log level', 0);
       io.sockets.on('connection', function(socket){
         // io.emit('message', 'Client connected');
         // addMessage('Connection attempt....');
