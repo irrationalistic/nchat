@@ -131,7 +131,7 @@ screen.render();
 app
   .version('0.0.1')
   .option('-s, --server', 'Run as server')
-  .option('-p, --port [port]', 'Which port to use?', 3333)
+  .option('-p, --port [port]', 'Which port to use?', process.env.PORT || 3333)
   .option('-a, --address [address]', 'Which address to use?', 'http://127.0.0.1:3333')
   .option('-u, --user [name]', 'Which name to use?', 'Server')
   .parse(process.argv);
