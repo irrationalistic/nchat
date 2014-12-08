@@ -162,6 +162,7 @@ if(app.server){
 
       socket.on('message', function(data){
         addMessage(data.message, data.user, data.color);
+        io.emit('message', data);
       });
 
       socket.on('disconnect', function() {
