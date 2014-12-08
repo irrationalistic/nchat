@@ -3,6 +3,8 @@ var color = require('just.randomcolor');
 var server, io;
 var app = require('commander');
 
+var serverColor = 333;
+
 process.env.DEBUG = true;
 
 app
