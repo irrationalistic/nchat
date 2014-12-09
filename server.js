@@ -1,9 +1,10 @@
 var externalip = require('externalip');
 var socketio = require('socket.io');
+var _ = require('underscore');
 
 module.exports = function(serverData, port, display){
   var io = socketio.listen(port);
-
+  
   io.sockets.on('connection', function(socket){
     var user = {};
 
@@ -24,6 +25,30 @@ module.exports = function(serverData, port, display){
         name: user.name,
         color: user.color
       });
+    });
+
+    socket.on('update', function(data){
+      var dataKeys = _.keys(data);
+      _.chain(data)
+        .pairs()
+        .forEach(function(pair, i){
+          var op = user[pair[0]];
+          if(pair[1] !== op){
+            var msg = user.name + '{/} changed their '+pair[0]+' to ' + pair[1];
+            io.emit('message', {
+              message: msg,
+              name: serverData.name,
+              color: serverData.color
+            });
+            if(display)
+              display.addMessage(
+                msg,
+                serverData.name,
+                serverData.color
+              );
+            user[pair[0]] = pair[1];
+          }
+        });
     });
 
     socket.on('disconnect', function(){

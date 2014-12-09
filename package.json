@@ -6,7 +6,8 @@
     "externalip": "0.0.1",
     "just.randomcolor": "^0.1.1",
     "socket.io": "^1.2.1",
-    "socket.io-client": "^1.2.1"
+    "socket.io-client": "^1.2.1",
+    "underscore": "^1.7.0"
   },
   "scripts": {
     "start": "node chat -s -u Server"

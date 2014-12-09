@@ -41,13 +41,18 @@ if(!commander.force && process.stdout.isTTY){
     io = client.io;
   }
 
+  var commands = require('./commands')(myData, io, display);
+
   display.events.onSubmit = function(message){
-    io.emit('message', {
-      message: message,
-      name: myData.name,
-      color: myData.color
-    });
-    if(commander.server) display.addMessage(message, myData.name, myData.color);
+    var commandMatched = commands(message);
+    if(!commandMatched){
+      io.emit('message', {
+        message: message,
+        name: myData.name,
+        color: myData.color
+      });
+      if(commander.server) display.addMessage(message, myData.name, myData.color);
+    }
   };
 } else {
   // force as server since this can't be anything else!
