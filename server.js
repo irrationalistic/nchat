@@ -34,7 +34,7 @@ module.exports = function(serverData, port, display){
         .forEach(function(pair, i){
           var op = user[pair[0]];
           if(pair[1] !== op){
-            var msg = user.name + '{/} changed their '+pair[0]+' to ' + pair[1];
+            var msg = user.name + ' changed their '+pair[0]+' to ' + pair[1];
             io.emit('message', {
               message: msg,
               name: serverData.name,

@@ -3,8 +3,10 @@ var _ = require('underscore');
 module.exports = function(myData, io, display){
   var commands = {
     '\/name (\\w*)': function(matches){
-      myData.name = matches[1];
-      io.emit('update', myData);
+      if(matches[1] != 'server'){
+        myData.name = matches[1];
+        io.emit('update', myData);
+      }
     },
     '\/color (\\w*)': function(matches){
       myData.color = matches[1];
