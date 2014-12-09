@@ -1,8 +1,9 @@
 var commander = require('commander');
 var randomcolor = require('just.randomcolor');
+var pkg = require('./package.json');
 
 commander
-  .version('0.0.1')
+  .version(pkg.version)
   .option('-s, --server', 'Run as server')
   .option('-p, --port [port]', 'Which port to use?', process.env.PORT || 3333)
   .option('-a, --address [address]', 'Which address to use?', 'http://127.0.0.1:3333')

@@ -4,6 +4,14 @@ Built with the intent of being a very basic, but easy to use chat application. S
 
 This uses [socket.io](http://socket.io/) for connecting and [blessed](https://github.com/chjj/blessed) for the skinning.
 
+# Flags
+
+* **-s, --server:** Run as server
+* **-p, --port [port]:** Which port to use?
+* **-a, --address [address]:** Which address to use?
+* **-u, --user [name]:** Which name to use?
+* **-f, --force:** Force to be server with no display
+
 # In-Chat Commands:
 
 * /help - view list of options
