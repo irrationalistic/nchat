@@ -89,7 +89,10 @@ module.exports = function(userData){
   };
 
   messageInput.key('enter', function(){
-    events.onSubmit(messageInput.content.trim());
+    var msg = messageInput.content.trim();
+    if(msg.length > 0){
+      events.onSubmit(msg);
+    }
     messageInput.clearValue();
   });
 
