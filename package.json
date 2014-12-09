@@ -9,6 +9,6 @@
     "socket.io-client": "^1.2.1"
   },
   "scripts": {
-    "start": "node test.js -s"
+    "start": "node chat -s -u Server"
   }
 }
