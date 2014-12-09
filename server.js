@@ -10,7 +10,6 @@ module.exports = function(serverData, port, display){
 
     socket.on('ready', function(data){
       user = data;
-      if(display) display.addMessage(user.name + ' has connected', serverData.name, serverData.color);
       io.emit('message', {
         message: user.name + ' has connected',
         name: serverData.name,
@@ -19,8 +18,7 @@ module.exports = function(serverData, port, display){
     });
 
     socket.on('message', function(data){
-      if(display) display.addMessage(data.message, user.name, user.color);
-      io.emit('message', {
+      socket.broadcast.emit('message', {
         message: data.message,
         name: user.name,
         color: user.color
@@ -40,19 +38,12 @@ module.exports = function(serverData, port, display){
               name: serverData.name,
               color: serverData.color
             });
-            if(display)
-              display.addMessage(
-                msg,
-                serverData.name,
-                serverData.color
-              );
             user[pair[0]] = pair[1];
           }
         });
     });
 
     socket.on('disconnect', function(){
-      if(display) display.addMessage(user.name + ' has disconnected', serverData.name, serverData.color);
       io.emit('message', {
         message: user.name + ' has disconnected',
         name: serverData.name,

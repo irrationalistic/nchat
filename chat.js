@@ -41,9 +41,10 @@ if(!commander.force && process.stdout.isTTY){
     io = server.io;
   } else {
     // run client
-    var client = require('./client')(myData, commander.address, display);
-    io = client.io;
+    
   }
+  var client = require('./client')(myData, commander.address, display);
+  io = client.io;
 
   var commands = require('./commands')(myData, io, display);
 
@@ -55,7 +56,7 @@ if(!commander.force && process.stdout.isTTY){
         name: myData.name,
         color: myData.color
       });
-      if(commander.server) display.addMessage(message, myData.name, myData.color);
+      display.addMessage(message, myData.name, myData.color);
     }
   };
 } else {
