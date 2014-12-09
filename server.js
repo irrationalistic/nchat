@@ -4,12 +4,15 @@ var _ = require('underscore');
 
 module.exports = function(serverData, port, display){
   var io = socketio.listen(port);
+
+  var connectedUsers = {};
   
   io.sockets.on('connection', function(socket){
     var user = {};
+    connectedUsers[socket.id] = user;
 
     socket.on('ready', function(data){
-      user = data;
+      _.extend(user, data);
       io.emit('message', {
         message: user.name + ' has connected',
         name: serverData.name,
@@ -43,7 +46,12 @@ module.exports = function(serverData, port, display){
         });
     });
 
+    socket.on('getUsers', function(){
+      socket.emit('users', _.values(connectedUsers));
+    });
+
     socket.on('disconnect', function(){
+      delete connectedUsers[socket.id];
       io.emit('message', {
         message: user.name + ' has disconnected',
         name: serverData.name,

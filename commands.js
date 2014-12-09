@@ -12,6 +12,9 @@ module.exports = function(myData, io, display){
       myData.color = matches[1];
       io.emit('update', myData);
     },
+    '\/users': function(){
+      io.emit('getUsers');
+    },
     '\/help': function(){
       display.addMessage('Available Commands:\n'+
         '/color hexvalue\n'+

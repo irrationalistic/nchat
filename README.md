@@ -9,3 +9,4 @@ This uses [socket.io](http://socket.io/) for connecting and [blessed](https://gi
 * /help - view list of options
 * /name newName - change name
 * /color hex - change color (don't need the #)
+* /users - get list of connected users

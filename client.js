@@ -1,5 +1,6 @@
 var socketio = require('socket.io-client');
 var notifier = require('node-notifier');
+var _ = require('underscore');
 
 module.exports = function(myData, address, display){
   var io = socketio.connect(address);
@@ -26,6 +27,10 @@ module.exports = function(myData, address, display){
       });
     }
     
+  });
+
+  io.on('users', function(users){
+    display.addMessage('Connected Users:\n' + _.pluck(users, 'name').join('\n'), 'users', myData.color);
   });
 
   return {
