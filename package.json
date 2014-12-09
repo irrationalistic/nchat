@@ -17,7 +17,7 @@
     "underscore": "^1.7.0"
   },
   "scripts": {
-    "start": "node chat -s -u Server"
+    "start": "node chat -s -f"
   },
   "preferGlobal": "true",
   "bin": {
