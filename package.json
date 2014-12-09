@@ -1,5 +1,10 @@
 {
-  "name": "chat_app",
+  "name": "nchat",
+  "description": "quick and easy terminal based chat",
+  "author": "Chris Rolfs",
+  "repository": {
+    "url": "https://github.com/irrationalistic/nchat"
+  },
   "dependencies": {
     "blessed": "0.0.37",
     "commander": "^2.5.0",
