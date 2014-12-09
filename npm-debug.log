@@ -1,0 +1,85 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish', '0.0.0' ]
+2 info using npm@2.1.4
+3 info using node@v0.10.32
+4 verbose node symlink /usr/local/bin/node
+5 verbose publish [ '0.0.0' ]
+6 silly cache add args [ '0.0.0', null ]
+7 verbose cache add spec 0.0.0
+8 silly cache add parsed spec { raw: '0.0.0',
+8 silly cache add   scope: null,
+8 silly cache add   name: '0.0.0',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: '*',
+8 silly cache add   type: 'range' }
+9 verbose addNamed 0.0.0@*
+10 silly addNamed semver.valid null
+11 silly addNamed semver.validRange *
+12 silly addNameRange { name: '0.0.0', range: '*', hasData: false }
+13 verbose mapToRegistry name 0.0.0
+14 verbose mapToRegistry uri http://registry.npmjs.org/0.0.0
+15 verbose addNameRange registry:http://registry.npmjs.org/0.0.0 not in flight; fetching
+16 verbose request on initialization, where is /0.0.0
+17 verbose request after pass 1, where is /0.0.0
+18 verbose request url raw /0.0.0
+19 verbose request resolving registry [ 'http://registry.npmjs.org/', './0.0.0' ]
+20 verbose request after pass 2, where is http://registry.npmjs.org/0.0.0
+21 verbose request no auth needed
+22 info attempt registry request try #1 at 16:11:07
+23 verbose request id 7f1fc4b8b4380e2b
+24 http request GET http://registry.npmjs.org/0.0.0
+25 http 404 http://registry.npmjs.org/0.0.0
+26 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 verbose headers   'content-type': 'application/json',
+26 verbose headers   'cache-control': 'max-age=0',
+26 verbose headers   'content-length': '52',
+26 verbose headers   'accept-ranges': 'bytes',
+26 verbose headers   date: 'Tue, 09 Dec 2014 23:11:07 GMT',
+26 verbose headers   via: '1.1 varnish',
+26 verbose headers   age: '0',
+26 verbose headers   connection: 'keep-alive',
+26 verbose headers   'x-served-by': 'cache-lax1434-LAX',
+26 verbose headers   'x-cache': 'MISS',
+26 verbose headers   'x-cache-hits': '0',
+26 verbose headers   'x-timer': 'S1418166667.677356,VS0,VE78' }
+27 silly registry.get cb [ 404,
+27 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+27 silly registry.get     'content-type': 'application/json',
+27 silly registry.get     'cache-control': 'max-age=0',
+27 silly registry.get     'content-length': '52',
+27 silly registry.get     'accept-ranges': 'bytes',
+27 silly registry.get     date: 'Tue, 09 Dec 2014 23:11:07 GMT',
+27 silly registry.get     via: '1.1 varnish',
+27 silly registry.get     age: '0',
+27 silly registry.get     connection: 'keep-alive',
+27 silly registry.get     'x-served-by': 'cache-lax1434-LAX',
+27 silly registry.get     'x-cache': 'MISS',
+27 silly registry.get     'x-cache-hits': '0',
+27 silly registry.get     'x-timer': 'S1418166667.677356,VS0,VE78' } ]
+28 verbose stack Error: 404 Not Found: 0.0.0
+28 verbose stack     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:258:14)
+28 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:197:65)
+28 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:237:22)
+28 verbose stack     at Request.emit (events.js:98:17)
+28 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1146:14)
+28 verbose stack     at Request.emit (events.js:117:20)
+28 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1097:12)
+28 verbose stack     at IncomingMessage.emit (events.js:117:20)
+28 verbose stack     at _stream_readable.js:943:16
+28 verbose stack     at process._tickCallback (node.js:419:13)
+29 verbose statusCode 404
+30 verbose pkgid 0.0.0
+31 verbose cwd /Users/crolfs/Projects/node/chat
+32 error Darwin 14.0.0
+33 error argv "node" "/usr/local/bin/npm" "publish" "0.0.0"
+34 error node v0.10.32
+35 error npm  v2.1.4
+36 error code E404
+37 error 404 Not Found: 0.0.0
+37 error 404
+37 error 404 '0.0.0' is not in the npm registry.
+37 error 404 You should bug the author to publish it (or use the name yourself!)
+37 error 404
+37 error 404 Note that you can also install from a
+37 error 404 tarball, folder, http url, or git url.
+38 verbose exit [ 1, true ]
