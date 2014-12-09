@@ -1,6 +1,6 @@
 {
   "name": "nchat",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "quick and easy terminal based chat",
   "author": "Chris Rolfs",
   "repository": {
@@ -19,6 +19,7 @@
   "scripts": {
     "start": "node chat -s -u Server"
   },
+  "preferGlobal": "true",
   "bin": {
     "nchat": "./bin/nchat"
   }
