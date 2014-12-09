@@ -28,6 +28,10 @@ if(!commander.force && process.stdout.isTTY){
     console.error('Must set a username with -u!');
     return;
   }
+  if(commander.user === 'server'){
+    console.error('Cannot use the "server" username!');
+    return;
+  }
   
   var display = require('./display')(myData);
   var io;

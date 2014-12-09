@@ -63,6 +63,10 @@ module.exports = function(userData){
   screen.focusPush(messageInput);
 
   program.key('C-c', function(ch, key) {
+    messageView.setContent('');
+    messageView.hide();
+    messageInput.hide();
+    screen.render();
     program.clear();
     program.disableMouse();
     program.showCursor();
