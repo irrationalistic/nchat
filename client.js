@@ -18,6 +18,8 @@ module.exports = function(myData, address, display){
     display.addMessage(data.message, data.name, data.color);
 
     detectActive.matchTitle('nchat(\\s+)(-[s|u|f|p])', function(err, isMatch){
+      if(err) return;
+      
       if(!isMatch){
         if(data.name === 'server'){
           notifier.notify({
