@@ -9,11 +9,12 @@
   "dependencies": {
     "blessed": "0.0.37",
     "commander": "^2.5.0",
+    "detect-active-title": "^1.0.0",
     "just.randomcolor": "^0.1.1",
+    "node-notifier": "^4.0.3",
     "socket.io": "^1.2.1",
     "socket.io-client": "^1.2.1",
-    "underscore": "^1.7.0",
-    "node-notifier": "^4.0.3"
+    "underscore": "^1.7.0"
   },
   "scripts": {
     "start": "node nchat -s -f"
