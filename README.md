@@ -4,6 +4,8 @@ Built with the intent of being a very basic, but easy to use chat application. S
 
 This uses [socket.io](http://socket.io/) for connecting and [blessed](https://github.com/chjj/blessed) for the skinning.
 
+Notifications are supported only in OSX via [detect-active-title](https://www.npmjs.com/package/detect-active-title) and [node-notifier](https://www.npmjs.com/package/node-notifier) packages.
+
 # Screenshot
 
 This is dependent on your theme, so colors may vary.
