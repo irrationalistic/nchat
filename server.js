@@ -1,4 +1,3 @@
-var externalip = require('externalip');
 var socketio = require('socket.io');
 var _ = require('underscore');
 
