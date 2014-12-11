@@ -12,10 +12,11 @@
     "just.randomcolor": "^0.1.1",
     "socket.io": "^1.2.1",
     "socket.io-client": "^1.2.1",
-    "underscore": "^1.7.0"
+    "underscore": "^1.7.0",
+    "node-notifier": "^4.0.3"
   },
   "scripts": {
-    "start": "node chat -s -f"
+    "start": "node nchat -s -f"
   },
   "preferGlobal": "true",
   "bin": {
