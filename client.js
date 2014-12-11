@@ -1,5 +1,4 @@
 var socketio = require('socket.io-client');
-var notifier = require('node-notifier');
 var _ = require('underscore');
 
 module.exports = function(myData, address, display){
@@ -14,19 +13,7 @@ module.exports = function(myData, address, display){
   });
 
   io.on('message', function(data){
-    display.addMessage(data.message, data.name, data.color);
-    if(data.name === 'server'){
-      notifier.notify({
-        title: 'Message',
-        message: data.message
-      });
-    } else {
-      notifier.notify({
-        title: 'Message',
-        message: 'Message from ' + data.name
-      });
-    }
-    
+    display.addMessage(data.message, data.name, data.color);   
   });
 
   io.on('users', function(users){
