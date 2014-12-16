@@ -1,9 +1,12 @@
-var socketio = require('socket.io-client');
+var socketio = require('socket.io-proxy');
 var _ = require('underscore');
 var notifier = require('node-notifier');
 var detectActive = require('detect-active-title');
 
-module.exports = function(myData, address, display){
+module.exports = function(myData, address, proxy, display){
+  if(proxy){
+    socketio.init(proxy);
+  }
   var io = socketio.connect(address);
 
   io.on('connect', function(){

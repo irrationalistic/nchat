@@ -9,6 +9,7 @@ commander
   .option('-a, --address [address]', 'Which address to use?', 'http://127.0.0.1:3333')
   .option('-u, --user [name]', 'Which name to use?')
   .option('-f, --force', 'Force to be server with no display', false)
+  .option('-x, --proxy [address]', 'Use proxy?')
   .parse(process.argv);
 
 
@@ -44,7 +45,7 @@ if(!commander.force && process.stdout.isTTY){
     // run client
     
   }
-  var client = require('./client')(myData, commander.address, display);
+  var client = require('./client')(myData, commander.address, commander.proxy, display);
   io = client.io;
 
   var commands = require('./commands')(myData, io, display);
