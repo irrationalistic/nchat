@@ -14,7 +14,7 @@
     "node-notifier": "^4.0.3",
     "socket.io": "^1.2.1",
     "socket.io-client": "^1.2.1",
-    "socket.io-proxy": "git://github.com/irrationalistic/socket.io-proxy.git",
+    "socket.io-proxy": "git+https://github.com/irrationalistic/socket.io-proxy.git",
     "underscore": "^1.7.0"
   },
   "scripts": {
