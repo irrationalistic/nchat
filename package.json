@@ -10,11 +10,12 @@
     "blessed": "0.0.37",
     "commander": "^2.5.0",
     "detect-active-title": "^1.0.0",
+    "http-proxy-agent": "^0.2.6",
+    "https-proxy-agent": "^0.3.5",
     "just.randomcolor": "^0.1.1",
     "node-notifier": "^4.0.3",
     "socket.io": "^1.2.1",
     "socket.io-client": "^1.2.1",
-    "socket.io-proxy": "git+https://github.com/irrationalistic/socket.io-proxy.git",
     "underscore": "^1.7.0"
   },
   "scripts": {

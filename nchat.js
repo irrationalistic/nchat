@@ -2,6 +2,8 @@ var commander = require('commander');
 var randomcolor = require('just.randomcolor');
 var pkg = require('./package.json');
 
+// process.env.DEBUG = '*';
+
 commander
   .version(pkg.version)
   .option('-s, --server', 'Run as server')
@@ -36,15 +38,17 @@ if(!commander.force && process.stdout.isTTY){
   }
   
   var display = require('./display')(myData);
+  // var display = {
+  //   addMessage: function(msg){ console.log('MSG: ' + msg); },
+  //   events: {onSubmit: null}
+  // };
   var io;
   if(commander.server){
     // run server AND client
     var server = require('./server')(serverData, commander.port, display);
     io = server.io;
-  } else {
-    // run client
-    
   }
+  
   var client = require('./client')(myData, commander.address, commander.proxy, display);
   io = client.io;
 

@@ -1,14 +1,33 @@
-var socketio = require('socket.io-proxy');
+var socketio = require('socket.io-client');
+var url = require('url');
 var _ = require('underscore');
 var notifier = require('node-notifier');
 var detectActive = require('detect-active-title');
 
-module.exports = function(myData, address, proxy, display){
-  if(proxy){
-    socketio.init(proxy);
-  }
-  var io = socketio.connect(address);
+var httpAgent = require('http-proxy-agent');
+var httpsAgent = require('https-proxy-agent');
 
+module.exports = function(myData, address, proxy, display){
+  var io, agent;
+  if(proxy){
+    var parsed = url.parse(address);
+    var opts = url.parse(proxy);
+    opts.secureEndpoint = true;
+
+    if(parsed.protocol === 'https:')
+      agent = new httpsAgent(opts);
+    else
+      agent = new httpAgent(opts);
+    io = socketio.connect(address, {
+      agent: agent
+    });
+  } else {
+    io = socketio.connect(address);
+  }
+
+  // var io = {on: function(){}};
+  // var io = socketio.connect('http://localhost:8081');
+  
   io.on('connect', function(){
     io.emit('ready', myData);
   });
