@@ -2,7 +2,7 @@
 
 Built with the intent of being a very basic, but easy to use chat application. Since it is so easy to spin up servers, you can quickly change urls or ports with a few changes. No database is required and it can be run directly from terminal. (only tested on OSX for now).
 
-This uses [socket.io](http://socket.io/) for connecting and [blessed](https://github.com/chjj/blessed) for the skinning.
+This uses [socket.io](http://socket.io/) for connecting and [blessed](https://github.com/chjj/blessed) for the skinning. Proxy connections are also supported.
 
 Notifications are supported only in OSX via [detect-active-title](https://www.npmjs.com/package/detect-active-title) and [node-notifier](https://www.npmjs.com/package/node-notifier) packages.
 
@@ -19,6 +19,9 @@ This is dependent on your theme, so colors may vary.
 * **-a, --address [address]:** Which address to use?
 * **-u, --user [name]:** Which name to use?
 * **-f, --force:** Force to be server with no display
+* **-x, --proxy:** Use the specified proxy server
+
+**NOTE** If you have the `http_proxy` environment variable set, you don't need to use the -x flag. It will automatically use the variable. If you want to override it, setting the -x flag takes precedence.
 
 # In-Chat Commands:
 
