@@ -39,7 +39,7 @@ module.exports = function(myData, address, proxy, display){
   io.on('message', function(data){
     display.addMessage(data.message, data.name, data.color);
 
-    detectActive.matchTitle('nchat(\\s+)(-[s|u|f|p])', function(err, isMatch){
+    detectActive.matchTitle('(node(.*)nchat)|(nchat(.*)node)', function(err, isMatch){
       if(err) return;
       
       if(!isMatch){

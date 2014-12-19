@@ -14,6 +14,9 @@ commander
   .option('-x, --proxy [address]', 'Use proxy?')
   .parse(process.argv);
 
+if(process.env.http_proxy && !commander.proxy){
+  commander.proxy = process.env.http_proxy;
+}
 
 var serverData = {
   color: 333,
